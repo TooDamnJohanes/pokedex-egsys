@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.joaootavio.android.pokedex_egsys.common.Constants.PARAM_POKEMON_ID
+import com.joaootavio.android.pokedex_egsys.common.Constants.UNEXPECTED_ERROR
 import com.joaootavio.android.pokedex_egsys.common.ResponseApi
 import com.joaootavio.android.pokedex_egsys.domain.model.PokemonDetail
 import com.joaootavio.android.pokedex_egsys.domain.use_case.get_pokemons_details.GetPokemonsDetaisUseCase
@@ -50,7 +51,7 @@ class PokemonDetailViewModel @Inject constructor(
                     )
                 }
                 is ResponseApi.Error -> {
-                    _state.value = PokemonDetailState(error = result.message ?: "An unexpected error occurred")
+                    _state.value = PokemonDetailState(error = result.message ?: UNEXPECTED_ERROR)
                 }
                 is ResponseApi.Loading -> {
                     _state.value = PokemonDetailState(isLoading = true)

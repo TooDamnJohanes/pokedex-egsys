@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import com.joaootavio.android.pokedex_egsys.common.Constants.DATA_ICON
 
 @Composable
 fun PokemonDetailDataItem(
@@ -27,7 +28,7 @@ fun PokemonDetailDataItem(
     ) {
         Icon(
             painter = dataIcon,
-            contentDescription = "Data Icon",
+            contentDescription = DATA_ICON,
             tint = MaterialTheme.colors.onSurface
         )
         Spacer(

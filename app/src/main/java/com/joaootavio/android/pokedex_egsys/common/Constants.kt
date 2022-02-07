@@ -14,4 +14,10 @@ object Constants {
 
     const val POKEMON_LOGO = "Pokemon Logo"
     const val SEARCH_POKEMON = "Search pokemon"
+
+    const val DATA_ICON = "Data Icon"
+    const val KG = "kg"
+    const val METROS = "m"
+    const val BACK_ICON = "Back Icon"
+    const val BASE_STATS = "Base stats:"
 }

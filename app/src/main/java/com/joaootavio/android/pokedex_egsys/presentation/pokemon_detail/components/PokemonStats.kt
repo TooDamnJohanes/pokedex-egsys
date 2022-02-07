@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.joaootavio.android.pokedex_egsys.common.Constants.BASE_STATS
 import com.joaootavio.android.pokedex_egsys.common.parseStatToAbbr
 import com.joaootavio.android.pokedex_egsys.common.parseStatToColor
 import com.joaootavio.android.pokedex_egsys.domain.model.PokemonDetail
@@ -30,7 +31,7 @@ fun PokemonStats(
             .fillMaxWidth()
     ) {
         Text(
-            text = "Base stats:",
+            text = BASE_STATS,
             fontSize = 20.sp,
             color = MaterialTheme.colors.onSurface
         )

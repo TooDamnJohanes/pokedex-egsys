@@ -3,7 +3,6 @@ package com.joaootavio.android.pokedex_egsys.presentation.pokemon_detail.compone
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
@@ -16,6 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.joaootavio.android.pokedex_egsys.common.Constants.BACK_ICON
 
 
 @Composable
@@ -37,7 +37,7 @@ fun PokemonDetailTopSection(
     ) {
         Icon(
             imageVector = Icons.Default.ArrowBack,
-            contentDescription = "Back Icon",
+            contentDescription = BACK_ICON,
             tint = Color.White,
             modifier = Modifier
                 .size(36.dp)
