@@ -1,6 +1,5 @@
 package com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components
 
-import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -66,7 +65,7 @@ fun PokemonListItem(
             )
             .clickable {
                 navController.navigate(
-                    "${Screen.PokemonDetailScreen}/${dominantColor.toArgb()}/${pokemonName}"
+                    "${Screen.PokemonDetailScreen}/${dominantColor.toArgb()}/${pokemonItem.name}"
                 )
             }
 

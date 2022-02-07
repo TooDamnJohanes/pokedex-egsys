@@ -19,6 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import com.joaootavio.android.pokedex_egsys.R
 import com.joaootavio.android.pokedex_egsys.common.Constants.POKEMON_LOGO
 import com.joaootavio.android.pokedex_egsys.common.Constants.SEARCH_POKEMON
+import com.joaootavio.android.pokedex_egsys.data.remote.dto.Result
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.PokedexLazyColumn
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.SearchBar
 
@@ -30,6 +31,13 @@ fun PokemonsListScreen(
 ) {
     val newPokemonSearch: String by viewModel.searchState.collectAsState()
     val state = viewModel.state.value
+    val isSearchStarting = newPokemonSearch.trim() != ""
+    var filtredPokemonsList: List<Result> = emptyList()
+
+    if (isSearchStarting) {
+        filtredPokemonsList = state.pokemons.results.filter { it.name.contains(newPokemonSearch.trim()) }
+    }
+
 
     Surface(
         color = MaterialTheme.colors.background,
@@ -59,7 +67,7 @@ fun PokemonsListScreen(
             )
             Spacer(modifier = Modifier.height(10.dp))
             PokedexLazyColumn(
-                pokemonList = state.pokemons.results,
+                pokemonList = if(newPokemonSearch.trim().isNotEmpty()) filtredPokemonsList else state.pokemons.results,
                 navController = navController
             )
         }

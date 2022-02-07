@@ -25,6 +25,7 @@ class PokemonDetailViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<String>(PARAM_POKEMON_ID)?.let { pokemonId ->
+            println(pokemonId)
             getPokemons(pokemonId = pokemonId)
         }
     }
@@ -43,7 +44,8 @@ class PokemonDetailViewModel @Inject constructor(
                         name = "",
                         sprites = null,
                         types = emptyList(),
-                        weight = 0
+                        weight = 0,
+                        stats = emptyList()
                     )
                     )
                 }

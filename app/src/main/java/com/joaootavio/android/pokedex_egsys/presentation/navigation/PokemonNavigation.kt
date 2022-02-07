@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.joaootavio.android.pokedex_egsys.presentation.navigation.screens.Screen
+import com.joaootavio.android.pokedex_egsys.presentation.pokemon_detail.DetailPokemonScreen
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.PokemonsListScreen
 
 @ExperimentalComposeUiApi
@@ -33,12 +34,12 @@ fun PokemonNavigation() {
 
         val pokemonDetail = Screen.PokemonDetailScreen.name
         composable(
-            route = "$pokemonDetail/{dominantColor}/{pokemonItemId}",
+            route = "$pokemonDetail/{dominantColor}/{pokemonId}",
             arguments = listOf(
                 navArgument("dominantColor") {
                     type = NavType.IntType
                 },
-                navArgument("pokemonItemId") {
+                navArgument("pokemonId") {
                     type = NavType.StringType
                 }
             )
@@ -49,8 +50,12 @@ fun PokemonNavigation() {
             }
 
             val pokemonItemId = remember {
-                it.arguments?.getString("pokemonItemId")
+                it.arguments?.getString("pokemonId")
             }
+            DetailPokemonScreen(
+                navController = navController,
+                dominantColor = dominantColor
+            )
         }
     }
 }
