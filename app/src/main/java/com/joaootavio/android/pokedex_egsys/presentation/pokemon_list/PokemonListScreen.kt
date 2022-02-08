@@ -1,10 +1,9 @@
 package com.joaootavio.android.pokedex_egsys.presentation.pokemon_list
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -30,6 +29,7 @@ import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.PokedexLazyColumn
 import kotlin.random.Random
 
+@ExperimentalFoundationApi
 @ExperimentalComposeUiApi
 @Composable
 fun PokemonsListScreen(
@@ -129,6 +129,7 @@ fun PokemonsListScreen(
     )
 }
 
+@ExperimentalFoundationApi
 @ExperimentalComposeUiApi
 @Composable
 @Preview

@@ -1,5 +1,6 @@
 package com.joaootavio.android.pokedex_egsys.presentation.navigation.navigation
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -14,6 +15,7 @@ import com.joaootavio.android.pokedex_egsys.presentation.pokemon_detail.DetailPo
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.PokemonsListScreen
 import com.joaootavio.android.pokedex_egsys.presentation.splash.PokedexSplashScreen
 
+@ExperimentalFoundationApi
 @ExperimentalComposeUiApi
 @Composable
 fun PokemonNavigation() {
