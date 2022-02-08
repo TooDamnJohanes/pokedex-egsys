@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.joaootavio.android.pokedex_egsys.presentation.navigation.screens.Screen
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_detail.DetailPokemonScreen
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.PokemonsListScreen
+import com.joaootavio.android.pokedex_egsys.presentation.splash.PokedexSplashScreen
 
 @ExperimentalComposeUiApi
 @Composable
@@ -20,7 +21,7 @@ fun PokemonNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.PokemonListScreen.name
+        startDestination = Screen.SplashScreen.name
     ) {
         composable(Screen.SplashScreen.name) {
 
@@ -55,6 +56,11 @@ fun PokemonNavigation() {
             DetailPokemonScreen(
                 navController = navController,
                 dominantColor = dominantColor
+            )
+        }
+        composable(Screen.SplashScreen.name) {
+            PokedexSplashScreen(
+                navController = navController
             )
         }
     }

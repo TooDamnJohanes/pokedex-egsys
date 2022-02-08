@@ -44,4 +44,5 @@ object Constants {
     const val SEARCH_ICON = "Search Icon"
     const val POKEDEX_EGSYS = "Pokedex EgSys"
     const val CLOSE_ICON = "Close Icon"
+    const val RANDOM_POKEMON = "Random Pokemon FAB"
 }

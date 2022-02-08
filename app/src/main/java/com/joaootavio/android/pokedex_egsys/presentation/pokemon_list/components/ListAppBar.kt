@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,6 +46,8 @@ import com.joaootavio.android.pokedex_egsys.common.Constants.SEARCH_POKEMON
 import com.joaootavio.android.pokedex_egsys.common.Constants.STEEL
 import com.joaootavio.android.pokedex_egsys.common.Constants.WATER
 import com.joaootavio.android.pokedex_egsys.common.SearchAppBarState
+import com.joaootavio.android.pokedex_egsys.presentation.ui.theme.Roboto
+import com.joaootavio.android.pokedex_egsys.presentation.ui.theme.RobotoCondensed
 
 @ExperimentalComposeUiApi
 @Composable
@@ -82,6 +85,8 @@ fun DefaultListAppBar(
         title = {
             Text(
                 text = POKEDEX_EGSYS,
+                fontFamily = RobotoCondensed,
+                fontWeight = FontWeight.Bold
             )
         },
         actions = {
@@ -191,7 +196,8 @@ fun SearchAppBar(
                     Modifier
                         .alpha(ContentAlpha.medium),
                     text = SEARCH_POKEMON,
-                    color = Color.Black
+                    color = Color.Black,
+                    fontFamily = RobotoCondensed
                 )
             },
             textStyle = TextStyle(

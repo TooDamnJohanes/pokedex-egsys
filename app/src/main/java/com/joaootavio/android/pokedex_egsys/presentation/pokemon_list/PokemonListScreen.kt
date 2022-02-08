@@ -2,12 +2,15 @@ package com.joaootavio.android.pokedex_egsys.presentation.pokemon_list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,11 +21,14 @@ import androidx.navigation.compose.rememberNavController
 import com.joaootavio.android.pokedex_egsys.R
 import com.joaootavio.android.pokedex_egsys.common.Constants.NONE
 import com.joaootavio.android.pokedex_egsys.common.Constants.POKEMON_LOGO
+import com.joaootavio.android.pokedex_egsys.common.Constants.RANDOM_POKEMON
 import com.joaootavio.android.pokedex_egsys.common.SearchAppBarState
 import com.joaootavio.android.pokedex_egsys.data.remote.dto.Result
+import com.joaootavio.android.pokedex_egsys.presentation.navigation.screens.Screen
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.FilterType
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.ListAppBar
 import com.joaootavio.android.pokedex_egsys.presentation.pokemon_list.components.PokedexLazyColumn
+import kotlin.random.Random
 
 @ExperimentalComposeUiApi
 @Composable
@@ -41,7 +47,7 @@ fun PokemonsListScreen(
     val filterSelected: String by viewModel.filterSelected.collectAsState()
 
     if (isSearchStarting) {
-        if (stateFilter.pokemons.results.isNotEmpty()){
+        if (stateFilter.pokemons.results.isNotEmpty()) {
             filtredPokemonsList =
                 stateFilter.pokemons.results.filter { it.name.contains(newPokemonSearch.trim()) }
         } else {
@@ -55,8 +61,6 @@ fun PokemonsListScreen(
     } else {
         validPokemonsList = state.pokemons.results
     }
-
-
 
     Scaffold(
         modifier = Modifier
@@ -75,8 +79,27 @@ fun PokemonsListScreen(
                 onTextChanche = { newSearch ->
                     viewModel.onSearchStateChanged(newSearch)
                 },
-                onSSortClicked = {type ->
+                onSSortClicked = { type ->
                     viewModel.getPokemonsByType(type = type)
+                }
+            )
+        },
+        floatingActionButtonPosition = FabPosition.End,
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    val randomValue = Random.nextInt(0, 898)
+                    navController.navigate(
+                        "${Screen.PokemonDetailScreen}/${Color.Transparent.toArgb()}/$randomValue"
+                    )
+                },
+                contentColor = MaterialTheme.colors.background,
+                content = {
+                    Icon(
+                        painter = painterResource(R.drawable.ic_baseline_pokemon),
+                        contentDescription = RANDOM_POKEMON,
+                        tint = Color.White
+                    )
                 }
             )
         },
