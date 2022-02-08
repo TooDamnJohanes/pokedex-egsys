@@ -12,13 +12,10 @@ object Constants {
     const val UNEXPECTED_ERROR = "An unexpected error occurred"
     const val ANY_DATA_ERROR = "Couldn't receive any data"
 
-    const val POKEMON_LOGO = "Pokemon Logo"
     const val SEARCH_POKEMON = "Search pokemon..."
 
-    const val DATA_ICON = "Data Icon"
     const val KG = "kg"
     const val METROS = "m"
-    const val BACK_ICON = "Back Icon"
     const val BASE_STATS = "Base stats:"
 
     const val NORMAL = "Normal"
@@ -40,9 +37,15 @@ object Constants {
     const val DARK = "Dark"
     const val FAIRY = "Fairy"
     const val NONE = "None"
+
+    const val POKEDEX_EGSYS = "Pokedex EgSys"
+    const val RANDOM_POKEMON = "Random Pokemon FAB"
+
     const val LIST_ICON = "Icon List"
     const val SEARCH_ICON = "Search Icon"
-    const val POKEDEX_EGSYS = "Pokedex EgSys"
     const val CLOSE_ICON = "Close Icon"
-    const val RANDOM_POKEMON = "Random Pokemon FAB"
+    const val BACK_ICON = "Back Icon"
+    const val DATA_ICON = "Data Icon"
+    const val POKEMON_LOGO = "Pokemon Logo"
+
 }
