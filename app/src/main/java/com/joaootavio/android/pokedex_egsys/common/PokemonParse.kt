@@ -30,6 +30,30 @@ fun parseTypeToColor(type: Type): Color {
     }
 }
 
+fun parseTypeToColor(type: String): Color {
+    return when(type.toLowerCase(Locale.ROOT)) {
+        "normal" -> TypeNormal
+        "fire" -> TypeFire
+        "water" -> TypeWater
+        "electric" -> TypeElectric
+        "grass" -> TypeGrass
+        "ice" -> TypeIce
+        "fighting" -> TypeFighting
+        "poison" -> TypePoison
+        "ground" -> TypeGround
+        "flying" -> TypeFlying
+        "psychic" -> TypePsychic
+        "bug" -> TypeBug
+        "rock" -> TypeRock
+        "ghost" -> TypeGhost
+        "dragon" -> TypeDragon
+        "dark" -> TypeDark
+        "steel" -> TypeSteel
+        "fairy" -> TypeFairy
+        else -> Color.Transparent
+    }
+}
+
 fun parseStatToColor(stat: Stat): Color {
     return when(stat.stat.name.toLowerCase()) {
         "hp" -> HPColor

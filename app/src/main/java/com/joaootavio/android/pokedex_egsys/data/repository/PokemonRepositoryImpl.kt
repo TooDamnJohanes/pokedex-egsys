@@ -3,6 +3,7 @@ package com.joaootavio.android.pokedex_egsys.data.repository
 import com.joaootavio.android.pokedex_egsys.data.remote.PokemonApi
 import com.joaootavio.android.pokedex_egsys.data.remote.dto.PokemonDetailDto
 import com.joaootavio.android.pokedex_egsys.data.remote.dto.PokemonDto
+import com.joaootavio.android.pokedex_egsys.data.remote.dto.PokemonsByTypeDto
 import com.joaootavio.android.pokedex_egsys.domain.repository.PokemonRepository
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
@@ -17,5 +18,9 @@ class PokemonRepositoryImpl @Inject constructor(
 
     override suspend fun getPokemonById(pokemonId: String): PokemonDetailDto {
         return api.getPokemonById(pokemonId = pokemonId)
+    }
+
+    override suspend fun getPokemonsByType(typeId: String): PokemonsByTypeDto {
+        return api.getPokemonsByType(typeId = typeId)
     }
 }
